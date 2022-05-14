@@ -40,8 +40,8 @@ namespace Revisionary
         {
             Dictionary<object, object> json = new Dictionary<object, object>();
 
-            json.Add("name", "Anonymos");
-            json.Add("game_played", 0);
+            json.Add("name", Environment.UserName);
+            json.Add("games_played", 0);
             json.Add("perfect_games", 0);
             json.Add("sets_created", 0);
             json.Add("minutes_practiced", 0);
@@ -86,7 +86,68 @@ namespace Revisionary
 
         public static dynamic GetAllData()
         {
-            return JsonConvert.DeserializeObject(usrDataFile);
+            string rawJson;
+            using (var reader = new StreamReader(usrDataFile))
+            {
+                rawJson = reader.ReadToEnd();
+            }
+
+            return JsonConvert.DeserializeObject(rawJson);
+        }
+
+
+        public static void CreatedSet()
+        {
+            string rawJson;
+            using (var reader = new StreamReader(usrDataFile))
+            {
+                rawJson = reader.ReadToEnd();
+            }
+
+            dynamic json = JsonConvert.DeserializeObject(rawJson);
+            //int setsCreated = int.Parse(json.setsCreate) + 1;
+            json.sets_created += 1;
+
+            string output = JsonConvert.SerializeObject(json, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            File.WriteAllText(usrDataFile, output);
+        }
+
+
+        public static void updatePerfectGames(int amountAdd)
+        {
+            string rawJson;
+            using (var reader = new StreamReader(usrDataFile))
+            {
+                rawJson = reader.ReadToEnd();
+            }
+
+            dynamic json = JsonConvert.DeserializeObject(rawJson);
+            json.perfect_games += amountAdd;
+
+            string output = JsonConvert.SerializeObject(json, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            File.WriteAllText(usrDataFile, output);
+        }
+
+
+        public static void updateGamesPlayed()
+        {
+            string rawJson;
+            using (var reader = new StreamReader(usrDataFile))
+            {
+                rawJson = reader.ReadToEnd();
+            }
+
+            dynamic json = JsonConvert.DeserializeObject(rawJson);
+            json.games_played += 1;
+
+            string output = JsonConvert.SerializeObject(json, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            File.WriteAllText(usrDataFile, output);
+        }
+
+        //Status
+        public static void SetStatusFile()
+        {
+
         }
     }
 }

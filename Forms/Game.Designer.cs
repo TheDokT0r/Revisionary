@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_title = new System.Windows.Forms.Label();
             this.lbl_questionNumber = new System.Windows.Forms.Label();
             this.lbl_question = new System.Windows.Forms.Label();
@@ -35,6 +36,7 @@
             this.btn_playAgain = new System.Windows.Forms.Button();
             this.btn_backToMenu = new System.Windows.Forms.Button();
             this.lbl_stuts = new System.Windows.Forms.Label();
+            this.timer_playTime = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lbl_title
@@ -42,7 +44,7 @@
             this.lbl_title.AutoSize = true;
             this.lbl_title.Location = new System.Drawing.Point(12, 9);
             this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(242, 32);
+            this.lbl_title.Size = new System.Drawing.Size(300, 41);
             this.lbl_title.TabIndex = 0;
             this.lbl_title.Text = "set name and subject";
             // 
@@ -51,7 +53,7 @@
             this.lbl_questionNumber.AutoSize = true;
             this.lbl_questionNumber.Location = new System.Drawing.Point(1188, 9);
             this.lbl_questionNumber.Name = "lbl_questionNumber";
-            this.lbl_questionNumber.Size = new System.Drawing.Size(49, 32);
+            this.lbl_questionNumber.Size = new System.Drawing.Size(62, 41);
             this.lbl_questionNumber.TabIndex = 1;
             this.lbl_questionNumber.Text = "0/0";
             // 
@@ -61,7 +63,7 @@
             this.lbl_question.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_question.Location = new System.Drawing.Point(464, 106);
             this.lbl_question.Name = "lbl_question";
-            this.lbl_question.Size = new System.Drawing.Size(200, 47);
+            this.lbl_question.Size = new System.Drawing.Size(244, 59);
             this.lbl_question.TabIndex = 2;
             this.lbl_question.Text = "Placeholder";
             this.lbl_question.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -71,7 +73,7 @@
             this.lbl_correctOrWrong.AutoSize = true;
             this.lbl_correctOrWrong.Location = new System.Drawing.Point(520, 617);
             this.lbl_correctOrWrong.Name = "lbl_correctOrWrong";
-            this.lbl_correctOrWrong.Size = new System.Drawing.Size(78, 32);
+            this.lbl_correctOrWrong.Size = new System.Drawing.Size(97, 41);
             this.lbl_correctOrWrong.TabIndex = 3;
             this.lbl_correctOrWrong.Text = "label1";
             this.lbl_correctOrWrong.Visible = false;
@@ -109,15 +111,20 @@
             this.lbl_stuts.AutoSize = true;
             this.lbl_stuts.Location = new System.Drawing.Point(416, 215);
             this.lbl_stuts.Name = "lbl_stuts";
-            this.lbl_stuts.Size = new System.Drawing.Size(78, 32);
+            this.lbl_stuts.Size = new System.Drawing.Size(97, 41);
             this.lbl_stuts.TabIndex = 6;
             this.lbl_stuts.Text = "label1";
             this.lbl_stuts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_stuts.Visible = false;
             // 
+            // timer_playTime
+            // 
+            this.timer_playTime.Interval = 1000;
+            this.timer_playTime.Tick += new System.EventHandler(this.timer_playTime_Tick);
+            // 
             // Game
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1262, 673);
@@ -150,5 +157,6 @@
         private Button btn_playAgain;
         private Button btn_backToMenu;
         private Label lbl_stuts;
+        private System.Windows.Forms.Timer timer_playTime;
     }
 }

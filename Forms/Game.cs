@@ -16,10 +16,12 @@ namespace Revisionary
         CardsSet cardsSet;
         int currentCardIndex = 0;
         List<Button> Buttons;
-        int rightAnswersCounter = 0;
+        int correctAnswers = 0;
+        int ticksCounter;
 
         public Game(CardsSet set)
         {
+            ticksCounter = 0;
             cardsSet = set;
             cardsSet.cards = RandomizeSet(cardsSet.cards);
             currentCardIndex = 0;
@@ -34,6 +36,8 @@ namespace Revisionary
         {
             //Displays initial data
             lbl_title.Text = cardsSet.title + "\n" + cardsSet.subject;
+
+            timer_playTime.Start();
 
             DisplayNextQuestion();
         }
@@ -149,7 +153,7 @@ namespace Revisionary
 
             if(btn.Text == currentCard.rightAnswer)
             {
-                rightAnswersCounter++;
+                correctAnswers++;
             }
 
             //Loops over the btns and set their color according to which one was right and which one wasn't
@@ -216,13 +220,32 @@ namespace Revisionary
             else
             {
                 //Finsih the game, will you?
-                lbl_stuts.Text = "You've answered " + rightAnswersCounter + "/" + cardsSet.cards.Length + "questions correctly!";
-
-                lbl_stuts.TextAlign = ContentAlignment.MiddleCenter;
-                lbl_stuts.Visible = true;
-                btn_backToMenu.Visible = true;
-                btn_playAgain.Visible = true;
+                FinishGame();
             }
+        }
+
+
+        void FinishGame()
+        {
+            timer_playTime.Stop();
+            double timeInMinutes = Convert.ToDouble(ticksCounter) / 60;
+
+            ProfileMannager.updateGamesPlayed();
+
+            lbl_stuts.Text = "You've answered " + correctAnswers + "/" + cardsSet.cards.Length + "questions correctly!";
+
+            if(correctAnswers >= cardsSet.cards.Length)
+            {
+                lbl_stuts.Text += "\nYou've got a perfect game... Nice!";
+                ProfileMannager.updatePerfectGames(1);
+            }
+
+            lbl_stuts.Text += "\nPlay time: " + timeInMinutes.ToString().Substring(0, 4) + " minutes";
+
+            lbl_stuts.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_stuts.Visible = true;
+            btn_backToMenu.Visible = true;
+            btn_playAgain.Visible = true;
         }
 
 
@@ -241,6 +264,11 @@ namespace Revisionary
             Hide();
         }
 
+
+        private void timer_playTime_Tick(object sender, EventArgs e) //Every tick in the timer
+        {
+            ticksCounter++;
+        }
 
         private void Form_Closing(object sender, FormClosingEventArgs e)
         {

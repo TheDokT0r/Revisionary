@@ -96,14 +96,14 @@ namespace Revisionary
 
         private void btn_done_Click(object sender, EventArgs e)
         {
-            if(questionsCounter < 1)
+            /*if(questionsCounter < 1)
             {
                 Menu menu = new Menu();
                 menu.Show();
                 Hide();
 
                 return;
-            }
+            }*/
 
             if(!AllDataFilled())
             {
@@ -118,6 +118,8 @@ namespace Revisionary
             MannageSets.SaveSet(cardsSet); //Saving the set into a json file
 
             MessageBox.Show("Set " + cardsSet.title + " was saved seccesfuly into the database", "Card set has been saved!", MessageBoxButtons.OK);
+
+            ProfileMannager.CreatedSet();
 
             Menu menu1 = new Menu();
             menu1.Show();
