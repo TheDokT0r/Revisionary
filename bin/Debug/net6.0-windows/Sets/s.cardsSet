@@ -1,0 +1,22 @@
+{
+  "name": "s",
+  "subject": "d",
+  "cards": [
+    {
+      "question": "d",
+      "answer": "ss",
+      "wrong": [
+        "ss",
+        "sss",
+        "s",
+        "ss",
+        "s"
+      ]
+    },
+    {
+      "question": "",
+      "answer": "",
+      "wrong": []
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "placeholder",
+  "subject": "placeholder",
+
+  "cards": [
+    {
+      "question": "placeholder",
+      "answer": "placeholder",
+      "wrong": [
+        "placeholderA",
+        "placeholderB"
+      ]
+    }
+  ]
+}

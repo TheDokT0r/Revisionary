@@ -1,0 +1,35 @@
+{
+  "name": "Test",
+  "subject": "I have no fucking idea",
+  "cards": [
+    {
+      "question": "What's 9 + 10",
+      "answer": "21",
+      "wrong": [
+        "you stupid",
+        "you stupid",
+        "you stupid",
+        "19"
+      ]
+    },
+    {
+      "question": "What's 9 + 20",
+      "answer": "26",
+      "wrong": [
+        "you stupid",
+        "you stupid",
+        "you stupid",
+        "19",
+        "3204324324"
+      ]
+    },
+    {
+      "question": "What's 9 + 20",
+      "answer": "ggfdgfgfd",
+      "wrong": [
+        "you stupid",
+        "you stupid"
+      ]
+    }
+  ]
+}

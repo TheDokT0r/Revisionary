@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "PRiY0J/NWkNdvS47UtmJa43pU710NvTTreZqPg8DYODn5MDZI+oozqKaiZFYDCTXLOC3R39i7vF62oJD1VdIYQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\hp\\Desktop\\Programing Projects\\C#\\Revisionary\\Revisionary\\Revisionary.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hp\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
