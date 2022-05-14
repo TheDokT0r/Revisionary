@@ -32,6 +32,7 @@
             this.btn_create = new System.Windows.Forms.Button();
             this.btn_load = new System.Windows.Forms.Button();
             this.btn_import = new System.Windows.Forms.Button();
+            this.btn_profile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -83,12 +84,25 @@
             this.btn_import.UseVisualStyleBackColor = false;
             this.btn_import.Click += new System.EventHandler(this.btn_import_Click);
             // 
+            // btn_profile
+            // 
+            this.btn_profile.BackgroundImage = global::Revisionary.Properties.Resources.button_profil_png_4;
+            this.btn_profile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_profile.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_profile.Location = new System.Drawing.Point(1162, 9);
+            this.btn_profile.Name = "btn_profile";
+            this.btn_profile.Size = new System.Drawing.Size(88, 83);
+            this.btn_profile.TabIndex = 4;
+            this.btn_profile.UseVisualStyleBackColor = true;
+            this.btn_profile.Click += new System.EventHandler(this.btn_profile_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.btn_profile);
             this.Controls.Add(this.btn_import);
             this.Controls.Add(this.btn_load);
             this.Controls.Add(this.btn_create);
@@ -110,5 +124,6 @@
         private Button btn_create;
         private Button btn_load;
         private Button btn_import;
+        private Button btn_profile;
     }
 }

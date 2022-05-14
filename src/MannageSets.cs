@@ -52,6 +52,7 @@ namespace Revisionary
             var cardsArray = setCardsArray(cards).ToArray(); //sets the cards to an array of dictionaries so it could be added to the json file easier
             json.Add("cards", cardsArray);
 
+
             string output = JsonConvert.SerializeObject(json, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
             File.WriteAllText(jsonPath, output);
         }

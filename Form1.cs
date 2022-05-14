@@ -12,6 +12,7 @@ namespace Revisionary
 
         }
 
+
         private void btn_create_Click(object sender, EventArgs e)
         {
 
@@ -24,10 +25,12 @@ namespace Revisionary
             Hide();*/
         }
 
+
         private void Form_Closing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
+
 
         private void btn_load_Click(object sender, EventArgs e)
         {
@@ -39,6 +42,13 @@ namespace Revisionary
         private void btn_import_Click(object sender, EventArgs e)
         {
             MannageSets.ImportSets();
+        }
+
+        private void btn_profile_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile();
+            profile.Show();
+            Hide();
         }
     }
 }
