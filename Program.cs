@@ -12,6 +12,7 @@ namespace Revisionary
 
             MannageSets.checkFolder(); //Checks if the sets folder exists
             ProfileMannager.SetProfileFiles();
+            MannageStuts.CreateFile();
 
             Application.Run(new Menu());
         }

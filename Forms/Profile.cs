@@ -33,10 +33,52 @@ namespace Revisionary
             lbl_userName.Text = "Welcome Back " + usrData.name + "!";
             lbl_gamesPlayed.Text = "Games Played: " + usrData.games_played;
             lbl_perfectGames.Text = "Perfect Games: " + usrData.perfect_games;
-            lbl_timePlayed.Text = "Time Played: " + usrData.time_played;
+            lbl_timePlayed.Text = "Time Played: " + usrData.minutes_practiced + " minutes";
             lbl_setsCreated.Text = "Sets Created: " + usrData.sets_created;
         }
 
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            menu.Show();
+            Hide();
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            foreach(dynamic item in Controls) //Makes all other items invisible
+            {
+                item.Visible = false;
+            }
+
+            lbl_newUsrname.Visible = true;
+            txb_newName.Visible = true;
+            btn_submit.Visible = true;
+        }
+
+        private void btn_submit_Click(object sender, EventArgs e) //Submit a new username
+        {
+            if(txb_newName.Text == String.Empty)
+            {
+                MessageBox.Show("Invalid username. Please try again");
+                return;
+            }
+
+            ProfileMannager.ChangeName(txb_newName.Text);
+
+            foreach (dynamic item in Controls)
+            {
+                item.Visible = true;
+            }
+
+            lbl_newUsrname.Visible = false;
+            txb_newName.Visible = false;
+            btn_submit.Visible = false;
+
+            usrData = ProfileMannager.GetAllData();
+            setData();
+        }
 
         private void Form_Closing(object sender, FormClosingEventArgs e)
         {

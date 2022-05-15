@@ -203,7 +203,6 @@ namespace Revisionary
         {
             currentCardIndex++;
 
-
             foreach(var btn in Buttons)
             {
                 btn.Visible = false;
@@ -229,6 +228,7 @@ namespace Revisionary
         {
             timer_playTime.Stop();
             double timeInMinutes = Convert.ToDouble(ticksCounter) / 60;
+            ProfileMannager.updateTimePlayed(timeInMinutes);
 
             ProfileMannager.updateGamesPlayed();
 
@@ -246,6 +246,9 @@ namespace Revisionary
             lbl_stuts.Visible = true;
             btn_backToMenu.Visible = true;
             btn_playAgain.Visible = true;
+
+
+            MannageStuts.AddRecord(cardsSet.title, cardsSet.subject, cardsSet.cards.Length, correctAnswers); //Adds the record to the db
         }
 
 

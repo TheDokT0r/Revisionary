@@ -30,8 +30,7 @@ namespace Revisionary
 
             if (!File.Exists(usrStuts))
             {
-                var f = File.Create(usrStuts);
-                f.Close();
+                MannageStuts.CreateFile();
             }
         }
 
@@ -51,21 +50,15 @@ namespace Revisionary
         }
 
 
-        public static void AddMinutes(int mints)
+        public static void ChangeName(string newName)
         {
-            dynamic json = JsonConvert.DeserializeObject(usrDataFile);
-            int currentMints = json.minutes_practiced;
+            string rawJson;
+            using (var reader = new StreamReader(usrDataFile))
+            {
+                rawJson = reader.ReadToEnd();
+            }
 
-            currentMints += mints;
-
-            string output = JsonConvert.SerializeObject(json, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
-            File.WriteAllText(usrDataFile, output);
-        }
-
-
-        public static void ChangeNmae(string newName)
-        {
-            dynamic json = JsonConvert.DeserializeObject(usrDataFile);
+            dynamic json = JsonConvert.DeserializeObject(rawJson);
             json.name = newName;
 
             string output = JsonConvert.SerializeObject(json, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
@@ -144,10 +137,23 @@ namespace Revisionary
             File.WriteAllText(usrDataFile, output);
         }
 
-        //Status
-        public static void SetStatusFile()
-        {
 
+        public static void updateTimePlayed(double mints)
+        {
+            string rawJson;
+            using (var reader = new StreamReader(usrDataFile))
+            {
+                rawJson = reader.ReadToEnd();
+            }
+
+            dynamic json = JsonConvert.DeserializeObject(rawJson);
+
+            string mintsString = Convert.ToString(mints).Substring(0, 4);
+
+            json.minutes_practiced += Convert.ToDouble(mintsString);
+
+            string output = JsonConvert.SerializeObject(json, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            File.WriteAllText(usrDataFile, output);
         }
     }
 }
