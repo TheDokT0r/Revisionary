@@ -178,7 +178,7 @@
             this.Margin = new System.Windows.Forms.Padding(7, 9, 7, 9);
             this.Name = "Profile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Profile";
+            this.Text = "Revisionary";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Closing);
             this.Load += new System.EventHandler(this.Profile_Load);
             this.ResumeLayout(false);

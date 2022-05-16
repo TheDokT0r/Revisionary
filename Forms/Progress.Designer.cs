@@ -115,7 +115,8 @@
             this.Controls.Add(this.lbl_gamesPlayed);
             this.Controls.Add(this.lbl_title);
             this.Name = "Progress";
-            this.Text = "Progress";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Revisionary";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Closing);
             this.Load += new System.EventHandler(this.Progress_Load);
             this.ResumeLayout(false);

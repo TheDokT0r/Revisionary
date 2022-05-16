@@ -251,7 +251,8 @@
             this.Controls.Add(this.btn_subj2);
             this.Controls.Add(this.btn_subj1);
             this.Name = "Choose_Set";
-            this.Text = "Choose_Set_Progress";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Revisionary";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Closing);
             this.Load += new System.EventHandler(this.Choose_Set_Progress_Load);
             this.ResumeLayout(false);

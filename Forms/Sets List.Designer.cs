@@ -98,7 +98,7 @@
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Name = "Sets_List";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sets_List";
+            this.Text = "Revisionary";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Closing);
             this.Load += new System.EventHandler(this.Sets_List_Load);
             this.ResumeLayout(false);

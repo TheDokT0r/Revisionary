@@ -96,7 +96,8 @@
             this.Controls.Add(this.lst_questions);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "Edit_Set";
-            this.Text = "Edit_Set";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Revisionary";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Closing);
             this.Load += new System.EventHandler(this.Edit_Set_Load);
             this.ResumeLayout(false);

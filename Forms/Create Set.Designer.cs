@@ -49,18 +49,17 @@
             this.lbl_questionNum.AutoSize = true;
             this.lbl_questionNum.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_questionNum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_questionNum.Location = new System.Drawing.Point(431, 9);
+            this.lbl_questionNum.Location = new System.Drawing.Point(493, 12);
             this.lbl_questionNum.Name = "lbl_questionNum";
-            this.lbl_questionNum.Size = new System.Drawing.Size(181, 41);
+            this.lbl_questionNum.Size = new System.Drawing.Size(223, 50);
             this.lbl_questionNum.TabIndex = 4;
             this.lbl_questionNum.Text = "Question #0";
             // 
             // txb_rightAnswer
             // 
-            this.txb_rightAnswer.Location = new System.Drawing.Point(249, 119);
-            this.txb_rightAnswer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txb_rightAnswer.Location = new System.Drawing.Point(285, 159);
             this.txb_rightAnswer.Name = "txb_rightAnswer";
-            this.txb_rightAnswer.Size = new System.Drawing.Size(218, 23);
+            this.txb_rightAnswer.Size = new System.Drawing.Size(249, 27);
             this.txb_rightAnswer.TabIndex = 6;
             // 
             // label3
@@ -68,18 +67,17 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(46, 106);
+            this.label3.Location = new System.Drawing.Point(53, 141);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(179, 37);
+            this.label3.Size = new System.Drawing.Size(225, 46);
             this.label3.TabIndex = 5;
             this.label3.Text = "Right Answer:";
             // 
             // txb_wrong1
             // 
-            this.txb_wrong1.Location = new System.Drawing.Point(736, 119);
-            this.txb_wrong1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txb_wrong1.Location = new System.Drawing.Point(841, 159);
             this.txb_wrong1.Name = "txb_wrong1";
-            this.txb_wrong1.Size = new System.Drawing.Size(218, 23);
+            this.txb_wrong1.Size = new System.Drawing.Size(249, 27);
             this.txb_wrong1.TabIndex = 8;
             // 
             // label4
@@ -87,51 +85,46 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(501, 106);
+            this.label4.Location = new System.Drawing.Point(573, 141);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(208, 37);
+            this.label4.Size = new System.Drawing.Size(263, 46);
             this.label4.TabIndex = 7;
             this.label4.Text = "Wrong Answers:";
             // 
             // txb_wrong2
             // 
-            this.txb_wrong2.Location = new System.Drawing.Point(736, 156);
-            this.txb_wrong2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txb_wrong2.Location = new System.Drawing.Point(841, 208);
             this.txb_wrong2.Name = "txb_wrong2";
-            this.txb_wrong2.Size = new System.Drawing.Size(218, 23);
+            this.txb_wrong2.Size = new System.Drawing.Size(249, 27);
             this.txb_wrong2.TabIndex = 9;
             // 
             // txb_wrong3
             // 
-            this.txb_wrong3.Location = new System.Drawing.Point(736, 193);
-            this.txb_wrong3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txb_wrong3.Location = new System.Drawing.Point(841, 257);
             this.txb_wrong3.Name = "txb_wrong3";
-            this.txb_wrong3.Size = new System.Drawing.Size(218, 23);
+            this.txb_wrong3.Size = new System.Drawing.Size(249, 27);
             this.txb_wrong3.TabIndex = 10;
             // 
             // txb_wrong4
             // 
-            this.txb_wrong4.Location = new System.Drawing.Point(736, 234);
-            this.txb_wrong4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txb_wrong4.Location = new System.Drawing.Point(841, 312);
             this.txb_wrong4.Name = "txb_wrong4";
-            this.txb_wrong4.Size = new System.Drawing.Size(218, 23);
+            this.txb_wrong4.Size = new System.Drawing.Size(249, 27);
             this.txb_wrong4.TabIndex = 11;
             // 
             // txb_wrong5
             // 
-            this.txb_wrong5.Location = new System.Drawing.Point(736, 274);
-            this.txb_wrong5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txb_wrong5.Location = new System.Drawing.Point(841, 365);
             this.txb_wrong5.Name = "txb_wrong5";
-            this.txb_wrong5.Size = new System.Drawing.Size(218, 23);
+            this.txb_wrong5.Size = new System.Drawing.Size(249, 27);
             this.txb_wrong5.TabIndex = 12;
             // 
             // btn_next
             // 
             this.btn_next.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_next.Location = new System.Drawing.Point(586, 415);
-            this.btn_next.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_next.Location = new System.Drawing.Point(670, 553);
             this.btn_next.Name = "btn_next";
-            this.btn_next.Size = new System.Drawing.Size(261, 53);
+            this.btn_next.Size = new System.Drawing.Size(298, 71);
             this.btn_next.TabIndex = 13;
             this.btn_next.Text = "Next Card";
             this.btn_next.UseVisualStyleBackColor = true;
@@ -140,10 +133,9 @@
             // btn_done
             // 
             this.btn_done.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_done.Location = new System.Drawing.Point(213, 415);
-            this.btn_done.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_done.Location = new System.Drawing.Point(243, 553);
             this.btn_done.Name = "btn_done";
-            this.btn_done.Size = new System.Drawing.Size(261, 53);
+            this.btn_done.Size = new System.Drawing.Size(298, 71);
             this.btn_done.TabIndex = 14;
             this.btn_done.Text = "Done";
             this.btn_done.UseVisualStyleBackColor = true;
@@ -151,10 +143,9 @@
             // 
             // txb_question
             // 
-            this.txb_question.Location = new System.Drawing.Point(501, 75);
-            this.txb_question.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txb_question.Location = new System.Drawing.Point(573, 100);
             this.txb_question.Name = "txb_question";
-            this.txb_question.Size = new System.Drawing.Size(218, 23);
+            this.txb_question.Size = new System.Drawing.Size(249, 27);
             this.txb_question.TabIndex = 16;
             // 
             // label5
@@ -162,9 +153,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(344, 62);
+            this.label5.Location = new System.Drawing.Point(393, 83);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 37);
+            this.label5.Size = new System.Drawing.Size(163, 46);
             this.label5.TabIndex = 15;
             this.label5.Text = "Question:";
             // 
@@ -172,9 +163,10 @@
             // 
             this.btn_GoBack.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_GoBack.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_GoBack.Location = new System.Drawing.Point(980, 12);
+            this.btn_GoBack.Location = new System.Drawing.Point(1120, 16);
+            this.btn_GoBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_GoBack.Name = "btn_GoBack";
-            this.btn_GoBack.Size = new System.Drawing.Size(112, 50);
+            this.btn_GoBack.Size = new System.Drawing.Size(128, 67);
             this.btn_GoBack.TabIndex = 17;
             this.btn_GoBack.Text = "Back to Menu";
             this.btn_GoBack.UseVisualStyleBackColor = true;
@@ -182,10 +174,10 @@
             // 
             // Create_Set
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1104, 505);
+            this.ClientSize = new System.Drawing.Size(1262, 673);
             this.Controls.Add(this.btn_GoBack);
             this.Controls.Add(this.txb_question);
             this.Controls.Add(this.label5);
@@ -200,9 +192,9 @@
             this.Controls.Add(this.txb_rightAnswer);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_questionNum);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Create_Set";
-            this.Text = "Create_Set";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Revisionary";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Closing);
             this.Load += new System.EventHandler(this.Create_Set_Load);
             this.ResumeLayout(false);
