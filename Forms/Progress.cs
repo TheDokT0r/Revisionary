@@ -123,9 +123,16 @@ namespace Revisionary
 
         string setTimePlayedStr(double timePlayed)
         {
-            string[] splited = timePlayed.ToString().Split(".");
+            try
+            {
+                string[] splited = timePlayed.ToString().Split(".");
 
-            return splited[0] + "." + splited[1].Substring(0, 2);
+                return splited[0] + "." + splited[1].Substring(0, 2);
+            }
+            catch
+            {
+                return Convert.ToString(timePlayed);
+            }
         }
 
         private void Progress_Load(object sender, EventArgs e)

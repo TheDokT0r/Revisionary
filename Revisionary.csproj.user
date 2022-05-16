@@ -10,6 +10,9 @@
     <Compile Update="Forms\Create Set.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Edit_Set.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Game.cs">
       <SubType>Form</SubType>
     </Compile>

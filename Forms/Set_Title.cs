@@ -25,9 +25,9 @@ namespace Revisionary
 
         private void btn_continue_Click(object sender, EventArgs e)
         {
-            if (cmb_subjects.Text == "" || cmb_subjects.Text == "")
+            if (cmb_subjects.Text == "" || cmb_subjects.Text == "" || !cmb_subjects.Items.Contains(cmb_subjects.Text))
             {
-                MessageBox.Show("Data is invalid", "Error");
+                MessageBox.Show("Data is invalid. Please Make sure you've filled the title field and chose a subject from the list", "Error");
                 return;
             }
 

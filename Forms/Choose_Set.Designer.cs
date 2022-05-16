@@ -40,6 +40,9 @@
             this.lst_sets = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_select = new System.Windows.Forms.Button();
+            this.btn_back = new System.Windows.Forms.Button();
+            this.btn_edit = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_subj1
@@ -174,21 +177,67 @@
             // 
             // btn_select
             // 
+            this.btn_select.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btn_select.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_select.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_select.Location = new System.Drawing.Point(582, 579);
+            this.btn_select.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_select.Location = new System.Drawing.Point(812, 579);
             this.btn_select.Name = "btn_select";
             this.btn_select.Size = new System.Drawing.Size(265, 79);
             this.btn_select.TabIndex = 11;
             this.btn_select.Text = "Select";
-            this.btn_select.UseVisualStyleBackColor = true;
+            this.btn_select.UseVisualStyleBackColor = false;
             this.btn_select.Click += new System.EventHandler(this.btn_select_Click);
             // 
-            // Choose_Set_Progress
+            // btn_back
+            // 
+            this.btn_back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_back.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_back.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_back.Location = new System.Drawing.Point(1083, 7);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(154, 61);
+            this.btn_back.TabIndex = 12;
+            this.btn_back.Text = "Back to Menu";
+            this.btn_back.UseVisualStyleBackColor = false;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
+            // 
+            // btn_edit
+            // 
+            this.btn_edit.BackColor = System.Drawing.SystemColors.Info;
+            this.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_edit.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_edit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_edit.Location = new System.Drawing.Point(367, 579);
+            this.btn_edit.Name = "btn_edit";
+            this.btn_edit.Size = new System.Drawing.Size(265, 79);
+            this.btn_edit.TabIndex = 13;
+            this.btn_edit.Text = "Edit";
+            this.btn_edit.UseVisualStyleBackColor = false;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.BackgroundImage = global::Revisionary.Properties.Resources._367_3670099_delete_comments_delete_icon_svg;
+            this.btn_delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_delete.Location = new System.Drawing.Point(638, 578);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(83, 80);
+            this.btn_delete.TabIndex = 14;
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // Choose_Set
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.btn_edit);
+            this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_select);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lst_sets);
@@ -201,7 +250,7 @@
             this.Controls.Add(this.btn_subj3);
             this.Controls.Add(this.btn_subj2);
             this.Controls.Add(this.btn_subj1);
-            this.Name = "Choose_Set_Progress";
+            this.Name = "Choose_Set";
             this.Text = "Choose_Set_Progress";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Closing);
             this.Load += new System.EventHandler(this.Choose_Set_Progress_Load);
@@ -224,5 +273,8 @@
         private ListBox lst_sets;
         private Label label1;
         private Button btn_select;
+        private Button btn_back;
+        private Button btn_edit;
+        private Button btn_delete;
     }
 }

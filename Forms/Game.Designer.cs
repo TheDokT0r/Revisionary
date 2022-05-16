@@ -112,11 +112,12 @@
             // lbl_stuts
             // 
             this.lbl_stuts.AutoSize = true;
-            this.lbl_stuts.Location = new System.Drawing.Point(416, 215);
+            this.lbl_stuts.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_stuts.Location = new System.Drawing.Point(322, 97);
             this.lbl_stuts.Name = "lbl_stuts";
-            this.lbl_stuts.Size = new System.Drawing.Size(97, 41);
+            this.lbl_stuts.Size = new System.Drawing.Size(553, 108);
             this.lbl_stuts.TabIndex = 6;
-            this.lbl_stuts.Text = "label1";
+            this.lbl_stuts.Text = "You\'ve answered (  ) Correctly!\r\nPlay time: Idk";
             this.lbl_stuts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_stuts.Visible = false;
             // 
@@ -155,7 +156,7 @@
             this.Controls.Add(this.lbl_title);
             this.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";

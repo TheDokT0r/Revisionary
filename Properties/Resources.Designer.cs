@@ -63,6 +63,16 @@ namespace Revisionary.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _367_3670099_delete_comments_delete_icon_svg {
+            get {
+                object obj = ResourceManager.GetObject("367-3670099_delete-comments-delete-icon-svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap button_profil_png_4 {
             get {
                 object obj = ResourceManager.GetObject("button-profil-png-4", resourceCulture);

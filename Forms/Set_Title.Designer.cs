@@ -93,6 +93,7 @@
             // 
             // cmb_subjects
             // 
+            this.cmb_subjects.BackColor = System.Drawing.Color.White;
             this.cmb_subjects.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmb_subjects.FormattingEnabled = true;
             this.cmb_subjects.Items.AddRange(new object[] {

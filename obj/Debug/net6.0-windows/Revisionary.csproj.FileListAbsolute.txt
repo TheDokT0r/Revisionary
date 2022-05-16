@@ -32,3 +32,4 @@ C:\Users\hp\Desktop\Programing Projects\C#\Revisionary\Revisionary\bin\Debug\net
 C:\Users\hp\Desktop\Programing Projects\C#\Revisionary\Revisionary\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\hp\Desktop\Programing Projects\C#\Revisionary\Revisionary\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\hp\Desktop\Programing Projects\C#\Revisionary\Revisionary\obj\Debug\net6.0-windows\Revisionary.Choose_Set.resources
+C:\Users\hp\Desktop\Programing Projects\C#\Revisionary\Revisionary\obj\Debug\net6.0-windows\Revisionary.Edit_Set.resources

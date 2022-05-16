@@ -211,5 +211,52 @@ namespace Revisionary
 
             return true;
         }
+
+
+        public static void modifySet(CardsSet set)
+        {
+            //loop over all files in SetsPath
+            string[] files = Directory.GetFiles(SetsPath, "*.cardsSet", SearchOption.AllDirectories);
+
+            foreach (string file in files)
+            {
+                if (Path.GetFileName(file) == set.title + ".cardsSet")
+                {
+                    using (StreamReader r = new StreamReader(file))
+                    {
+                        string json = r.ReadToEnd();
+                        dynamic setData = JsonConvert.DeserializeObject(json);
+                        setData.name = set.title;
+                        setData.subject = set.subject;
+                        setData.cards = setCardsArray(set.cards);
+
+                        string output = JsonConvert.SerializeObject(setData, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                        File.WriteAllText(file, output);
+                    }
+                }
+            }
+        }
+
+        public static void removeSet(CardsSet set)
+        {
+            string[] files = Directory.GetFiles(SetsPath, "*.cardsSet", SearchOption.AllDirectories);
+
+            foreach (string file in files)
+            {
+                string fPath = set.title + ".cardsSet";
+                if (Path.GetFileName(file) == fPath)
+                {
+                    try
+                    {
+                        File.Delete(file);
+                        //MessageBox.Show(file);
+                    }
+                    catch(Exception e)
+                    {
+                        MessageBox.Show("Cannot remove this file: " + e.Message);
+                    }
+                }
+            }
+        }
     }
 }

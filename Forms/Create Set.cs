@@ -77,6 +77,8 @@ namespace Revisionary
             questionsCounter++;
             lbl_questionNum.Text = "Question #" + questionsCounter;
 
+            ProfileMannager.CreatedSet();
+
             clearTxb();
         }
 

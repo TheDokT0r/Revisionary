@@ -19,9 +19,12 @@ namespace Revisionary
         List<Button> Buttons;
         int correctAnswers = 0;
         int ticksCounter;
+        string soundEffectsPath;
 
         public Game(CardsSet set)
         {
+            string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            soundEffectsPath = appdata + @"\.Revisionary\comps\";
             ticksCounter = 0;
             cardsSet = set;
             cardsSet.cards = RandomizeSet(cardsSet.cards);
@@ -161,9 +164,8 @@ namespace Revisionary
             if(btn.Text == currentCard.rightAnswer)
             {
                 correctAnswers++;
-                string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
-                SoundPlayer soundPlayer = new SoundPlayer(appdata + @"\.Revisionary\comps\correct.wav");
+                SoundPlayer soundPlayer = new SoundPlayer(soundEffectsPath + @"\correct.wav");
                 soundPlayer.Play();
             }
 
@@ -187,7 +189,7 @@ namespace Revisionary
             if(btn.Text == currentCard.rightAnswer)
             {
                 lbl_correctOrWrong.ForeColor = Color.Green;
-                lbl_correctOrWrong.Text = "Currect!";
+                lbl_correctOrWrong.Text = "Correct!";
             }
             else
             {
@@ -241,6 +243,7 @@ namespace Revisionary
 
         void FinishGame()
         {
+            lbl_question.Visible = false;
             timer_playTime.Stop();
             double timeInMinutes = Convert.ToDouble(ticksCounter) / 60;
             ProfileMannager.updateTimePlayed(timeInMinutes);
@@ -267,6 +270,9 @@ namespace Revisionary
 
 
             MannageStuts.AddRecord(cardsSet.title, cardsSet.subject, cardsSet.cards.Length, correctAnswers, timeInMinutes); //Adds the record to the dbs
+
+            SoundPlayer soundPlayer = new SoundPlayer(soundEffectsPath + "finish.wav");
+            soundPlayer.Play();
         }
 
 

@@ -107,5 +107,43 @@ namespace Revisionary
             }
 
         }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu();
+            menu.Show();
+            Hide();
+        }
+
+        private void btn_edit_Click(object sender, EventArgs e)
+        {
+            /*if(lst_sets.SelectedItems == null || lst_sets.SelectedIndex < 0)
+            {
+                return;
+            }
+
+            Edit_Set edit_Set = new Edit_Set(setsList[lst_sets.SelectedIndex]);
+            edit_Set.Show();
+            Hide();*/
+
+            MessageBox.Show("This feature isn't avaliable yet");
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            if (lst_sets.SelectedItems == null || lst_sets.SelectedIndex < 0)
+            {
+                return;
+            }
+
+            var results = MessageBox.Show("Are you sure you want to delete this set?", "Are you sure", MessageBoxButtons.YesNo);
+
+            if (results == DialogResult.Yes)
+            {
+                MannageSets.removeSet(setsList[lst_sets.SelectedIndex]);
+                allSubjects();
+                MessageBox.Show("Set has been removed from the database");
+            }
+        }
     }
 }
