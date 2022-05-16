@@ -152,7 +152,7 @@ namespace Revisionary
             lbl_question.Text = currentCard.question;
             lbl_question.Left = (this.Width - lbl_question.Width) / 2;
 
-            lbl_questionNumber.Text = currentCardIndex + "/" + cardsSet.cards.Length;
+            lbl_questionNumber.Text = (currentCardIndex + 1) + "/" + cardsSet.cards.Length;
         }
 
 
