@@ -31,10 +31,20 @@ namespace Revisionary
         void setData()
         {
             lbl_userName.Text = "Welcome Back " + usrData.name + "!";
+            lbl_userName.Location = new Point(this.Width / 2 - lbl_userName.Width / 2, lbl_userName.Location.Y);
+
             lbl_gamesPlayed.Text = "Games Played: " + usrData.games_played;
             lbl_perfectGames.Text = "Perfect Games: " + usrData.perfect_games;
-            lbl_timePlayed.Text = "Time Played: " + usrData.minutes_practiced + " minutes";
+            lbl_timePlayed.Text = "Time Played: " + setTimePlayedStr(Convert.ToDouble(usrData.minutes_practiced)) + " minutes";
             lbl_setsCreated.Text = "Sets Created: " + usrData.sets_created;
+        }
+
+
+        string setTimePlayedStr(double timePlayed)
+        {
+            string[] splited = timePlayed.ToString().Split(".");
+
+            return splited[0] + "." + splited[1].Substring(0, 2);
         }
 
 
@@ -78,6 +88,14 @@ namespace Revisionary
 
             usrData = ProfileMannager.GetAllData();
             setData();
+        }
+
+
+        private void btn_progress_Click(object sender, EventArgs e)
+        {
+            Choose_Set choose_Set_Progress = new Choose_Set(1);
+            choose_Set_Progress.Show();
+            Hide();
         }
 
         private void Form_Closing(object sender, FormClosingEventArgs e)

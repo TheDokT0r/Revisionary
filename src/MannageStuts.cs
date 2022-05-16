@@ -33,6 +33,7 @@ namespace Revisionary
             setData.Add("questionsAmount", -1);
             setData.Add("records", new List<int>(0));
             setData.Add("dates", new List<DateTime>());
+            setData.Add("time_played", 0);
 
             var json = new List<object>();
             json.Add(setData);
@@ -49,7 +50,7 @@ namespace Revisionary
         }
 
 
-        public static void AddRecord(string setName, string subject, int questionsAmount, int amountOfCorrectAnswers)
+        public static void AddRecord(string setName, string subject, int questionsAmount, int amountOfCorrectAnswers, double timePlayed)
         {
             string output;
             string rawJson;
@@ -74,6 +75,7 @@ namespace Revisionary
                 setData.Add("questionsAmount", questionsAmount);
                 setData.Add("records", recordsArr);
                 setData.Add("dates", new List<DateTime>(dateTimesArr));
+                setData.Add("time_played", timePlayed);
 
                 var jToken = new JsonToken();
 
@@ -89,6 +91,7 @@ namespace Revisionary
             //If item does exists in the db
             json[index].records.Add(amountOfCorrectAnswers);
             json[index].dates.Add(DateTime.Now);
+            json[index].time_played += timePlayed;
 
             output = JsonConvert.SerializeObject(json, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
             File.WriteAllText(usrStuts, output);
@@ -110,6 +113,58 @@ namespace Revisionary
                 if(Convert.ToString(json[i].set_name) == name && Convert.ToString(json[i].subject) == subject)
                 {
                     return i;
+                }
+            }
+
+            return -1;
+        }
+
+
+        public static void addTime(double mints)
+        {
+            string rawJson;
+            using (var reader = new StreamReader(usrStuts))
+            {
+                rawJson = reader.ReadToEnd();
+            }
+
+            dynamic json = JsonConvert.DeserializeObject(rawJson);
+            json.time_played += mints;
+
+            string output = JsonConvert.SerializeObject(json, Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            File.WriteAllText(usrStuts, output);
+        }
+
+        public static dynamic GetData()
+        {
+            string rawJson;
+            using (var reader = new StreamReader(usrStuts))
+            {
+                rawJson = reader.ReadToEnd();
+            }
+
+            return JsonConvert.DeserializeObject(rawJson);
+        }
+
+
+        public static dynamic GetDataOfSpecificSet(CardsSet set)
+        {
+            string name = set.title;
+            string subject = set.subject;
+
+            string rawJson;
+            using (var reader = new StreamReader(usrStuts))
+            {
+                rawJson = reader.ReadToEnd();
+            }
+
+            dynamic json = JsonConvert.DeserializeObject(rawJson);
+
+            for (int i = 0; i < json.Count; i++)
+            {
+                if (Convert.ToString(json[i].set_name) == name && Convert.ToString(json[i].subject) == subject)
+                {
+                    return json[i];
                 }
             }
 

@@ -4,6 +4,9 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Choose_Set.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Create Set.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -11,6 +14,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Progress.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Sets List.cs">

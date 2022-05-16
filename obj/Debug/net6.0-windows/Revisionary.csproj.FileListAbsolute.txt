@@ -23,3 +23,12 @@ C:\Users\hp\Desktop\Programing Projects\C#\Revisionary\Revisionary\obj\Debug\net
 C:\Users\hp\Desktop\Programing Projects\C#\Revisionary\Revisionary\obj\Debug\net6.0-windows\Revisionary.Properties.Resources.resources
 C:\Users\hp\Desktop\Programing Projects\C#\Revisionary\Revisionary\obj\Debug\net6.0-windows\Revisionary.Set_Title.resources
 C:\Users\hp\Desktop\Programing Projects\C#\Revisionary\Revisionary\obj\Debug\net6.0-windows\Revisionary.Profile.resources
+C:\Users\hp\Desktop\Programing Projects\C#\Revisionary\Revisionary\bin\Debug\net6.0-windows\System.Windows.Forms.DataVisualization.dll
+C:\Users\hp\Desktop\Programing Projects\C#\Revisionary\Revisionary\obj\Debug\net6.0-windows\Revisionary.Progress.resources
+C:\Users\hp\Desktop\Programing Projects\C#\Revisionary\Revisionary\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\hp\Desktop\Programing Projects\C#\Revisionary\Revisionary\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\hp\Desktop\Programing Projects\C#\Revisionary\Revisionary\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\hp\Desktop\Programing Projects\C#\Revisionary\Revisionary\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\hp\Desktop\Programing Projects\C#\Revisionary\Revisionary\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\hp\Desktop\Programing Projects\C#\Revisionary\Revisionary\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\hp\Desktop\Programing Projects\C#\Revisionary\Revisionary\obj\Debug\net6.0-windows\Revisionary.Choose_Set.resources

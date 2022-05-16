@@ -9,7 +9,8 @@ namespace Revisionary
 
         private void Menu_Load(object sender, EventArgs e)
         {
-
+            //center the title
+            lbl_title.Location = new Point((this.Width / 2) - (lbl_title.Width / 2), lbl_title.Location.Y);
         }
 
 
@@ -34,8 +35,12 @@ namespace Revisionary
 
         private void btn_load_Click(object sender, EventArgs e)
         {
-            Sets_List sets_List = new Sets_List();
+            /*Sets_List sets_List = new Sets_List();
             sets_List.Show();
+            Hide();*/
+
+            Choose_Set choose_Set = new Choose_Set(0);
+            choose_Set.Show();
             Hide();
         }
 
@@ -48,6 +53,13 @@ namespace Revisionary
         {
             Profile profile = new Profile();
             profile.Show();
+            Hide();
+        }
+
+        private void btn_exportSet_Click(object sender, EventArgs e)
+        {
+            Sets_List sets_List = new Sets_List();
+            sets_List.Show();
             Hide();
         }
     }

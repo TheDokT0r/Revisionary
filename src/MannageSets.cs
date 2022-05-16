@@ -97,6 +97,12 @@ namespace Revisionary
         }
 
 
+        public static string[] getAllSetsPaths()
+        {
+            return Directory.GetFiles(SetsPath, "*.cardsSet", SearchOption.AllDirectories);
+        }
+
+
         static Card[] GetCardsFromJson(dynamic cardsJson) //The code is god aweful
         {
             List<Card> cards = new List<Card>();
@@ -160,6 +166,22 @@ namespace Revisionary
             catch(Exception e)
             {
                 MessageBox.Show("Error, couldn't copy this file to the sets directory\n" + e, "Error");
+            }
+        }
+
+
+        public static void ExportSet(string ogSetPath)
+        {
+            string fileName = Path.GetFileName(ogSetPath);
+
+            using (var fbd = new FolderBrowserDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    File.Copy(ogSetPath, fbd.SelectedPath + "/" + fileName, true);
+                }
             }
         }
 

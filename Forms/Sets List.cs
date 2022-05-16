@@ -13,12 +13,14 @@ namespace Revisionary
     public partial class Sets_List : Form
     {
         CardsSet[] cardsSets;
+        string[] paths;
 
         public Sets_List()
         {
             InitializeComponent();
 
             cardsSets = MannageSets.getAllSets();
+            paths = MannageSets.getAllSetsPaths();
             ViewCardSets();
         }
 
@@ -50,11 +52,16 @@ namespace Revisionary
         {
             int index = view_SetsList.SelectedIndex;
 
-            CardsSet set = cardsSets[index];
+            MannageSets.ExportSet(paths[index]);
+            MessageBox.Show("Set has been saved in the target folder.\nYou can now send the file to your friends!");
 
-            Game game = new Game(set);
-            game.Show();
-            Hide();
+            //CardsSet set = cardsSets[index];
+
+            //MannageSets.ExportSet()
+
+            //Game game = new Game(set);
+            //game.Show();
+            //Hide();
         }
 
         private void btn_import_Click(object sender, EventArgs e)

@@ -38,6 +38,8 @@
             this.txb_newName = new System.Windows.Forms.TextBox();
             this.btn_submit = new System.Windows.Forms.Button();
             this.lbl_newUsrname = new System.Windows.Forms.Label();
+            this.btn_progress = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // lbl_userName
@@ -141,12 +143,26 @@
             this.lbl_newUsrname.Text = "New Username:";
             this.lbl_newUsrname.Visible = false;
             // 
+            // btn_progress
+            // 
+            this.btn_progress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btn_progress.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_progress.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_progress.Location = new System.Drawing.Point(443, 377);
+            this.btn_progress.Name = "btn_progress";
+            this.btn_progress.Size = new System.Drawing.Size(361, 102);
+            this.btn_progress.TabIndex = 10;
+            this.btn_progress.Text = "See Your Progress";
+            this.btn_progress.UseVisualStyleBackColor = false;
+            this.btn_progress.Click += new System.EventHandler(this.btn_progress_Click);
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 45F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.btn_progress);
             this.Controls.Add(this.lbl_newUsrname);
             this.Controls.Add(this.btn_submit);
             this.Controls.Add(this.txb_newName);
@@ -182,5 +198,7 @@
         private TextBox txb_newName;
         private Button btn_submit;
         private Label lbl_newUsrname;
+        private Button btn_progress;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

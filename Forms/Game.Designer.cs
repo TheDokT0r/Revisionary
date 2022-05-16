@@ -37,6 +37,7 @@
             this.btn_backToMenu = new System.Windows.Forms.Button();
             this.lbl_stuts = new System.Windows.Forms.Label();
             this.timer_playTime = new System.Windows.Forms.Timer(this.components);
+            this.btn_seeProgress = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -61,6 +62,7 @@
             // 
             this.lbl_question.AutoSize = true;
             this.lbl_question.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_question.ForeColor = System.Drawing.Color.White;
             this.lbl_question.Location = new System.Drawing.Point(464, 106);
             this.lbl_question.Name = "lbl_question";
             this.lbl_question.Size = new System.Drawing.Size(244, 59);
@@ -71,9 +73,10 @@
             // lbl_correctOrWrong
             // 
             this.lbl_correctOrWrong.AutoSize = true;
-            this.lbl_correctOrWrong.Location = new System.Drawing.Point(520, 617);
+            this.lbl_correctOrWrong.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_correctOrWrong.Location = new System.Drawing.Point(494, 575);
             this.lbl_correctOrWrong.Name = "lbl_correctOrWrong";
-            this.lbl_correctOrWrong.Size = new System.Drawing.Size(97, 41);
+            this.lbl_correctOrWrong.Size = new System.Drawing.Size(214, 89);
             this.lbl_correctOrWrong.TabIndex = 3;
             this.lbl_correctOrWrong.Text = "label1";
             this.lbl_correctOrWrong.Visible = false;
@@ -85,7 +88,7 @@
             this.btn_playAgain.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_playAgain.Location = new System.Drawing.Point(834, 331);
             this.btn_playAgain.Name = "btn_playAgain";
-            this.btn_playAgain.Size = new System.Drawing.Size(189, 96);
+            this.btn_playAgain.Size = new System.Drawing.Size(235, 96);
             this.btn_playAgain.TabIndex = 4;
             this.btn_playAgain.Text = "Play Again";
             this.btn_playAgain.UseVisualStyleBackColor = false;
@@ -97,9 +100,9 @@
             this.btn_backToMenu.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_backToMenu.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_backToMenu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_backToMenu.Location = new System.Drawing.Point(188, 331);
+            this.btn_backToMenu.Location = new System.Drawing.Point(139, 331);
             this.btn_backToMenu.Name = "btn_backToMenu";
-            this.btn_backToMenu.Size = new System.Drawing.Size(189, 96);
+            this.btn_backToMenu.Size = new System.Drawing.Size(238, 96);
             this.btn_backToMenu.TabIndex = 5;
             this.btn_backToMenu.Text = "Back to Menu";
             this.btn_backToMenu.UseVisualStyleBackColor = false;
@@ -122,12 +125,27 @@
             this.timer_playTime.Interval = 1000;
             this.timer_playTime.Tick += new System.EventHandler(this.timer_playTime_Tick);
             // 
+            // btn_seeProgress
+            // 
+            this.btn_seeProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btn_seeProgress.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_seeProgress.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_seeProgress.Location = new System.Drawing.Point(470, 331);
+            this.btn_seeProgress.Name = "btn_seeProgress";
+            this.btn_seeProgress.Size = new System.Drawing.Size(238, 96);
+            this.btn_seeProgress.TabIndex = 7;
+            this.btn_seeProgress.Text = "See Progress";
+            this.btn_seeProgress.UseVisualStyleBackColor = false;
+            this.btn_seeProgress.Visible = false;
+            this.btn_seeProgress.Click += new System.EventHandler(this.btn_seeProgres_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.btn_seeProgress);
             this.Controls.Add(this.lbl_stuts);
             this.Controls.Add(this.btn_backToMenu);
             this.Controls.Add(this.btn_playAgain);
@@ -158,5 +176,6 @@
         private Button btn_backToMenu;
         private Label lbl_stuts;
         private System.Windows.Forms.Timer timer_playTime;
+        private Button btn_seeProgress;
     }
 }

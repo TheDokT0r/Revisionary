@@ -33,13 +33,16 @@
             this.btn_load = new System.Windows.Forms.Button();
             this.btn_import = new System.Windows.Forms.Button();
             this.btn_profile = new System.Windows.Forms.Button();
+            this.lbl_ver = new System.Windows.Forms.Label();
+            this.lbl_credit = new System.Windows.Forms.Label();
+            this.btn_exportSet = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_title
             // 
             this.lbl_title.AutoSize = true;
             this.lbl_title.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_title.Location = new System.Drawing.Point(374, 9);
+            this.lbl_title.Location = new System.Drawing.Point(441, 9);
             this.lbl_title.Name = "lbl_title";
             this.lbl_title.Size = new System.Drawing.Size(396, 94);
             this.lbl_title.TabIndex = 0;
@@ -50,7 +53,7 @@
             this.btn_create.BackColor = System.Drawing.Color.Transparent;
             this.btn_create.Font = new System.Drawing.Font("Segoe UI Emoji", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_create.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_create.Location = new System.Drawing.Point(473, 537);
+            this.btn_create.Location = new System.Drawing.Point(330, 537);
             this.btn_create.Name = "btn_create";
             this.btn_create.Size = new System.Drawing.Size(245, 90);
             this.btn_create.TabIndex = 1;
@@ -76,7 +79,7 @@
             this.btn_import.BackColor = System.Drawing.Color.Transparent;
             this.btn_import.Font = new System.Drawing.Font("Segoe UI Emoji", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_import.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_import.Location = new System.Drawing.Point(950, 537);
+            this.btn_import.Location = new System.Drawing.Point(992, 537);
             this.btn_import.Name = "btn_import";
             this.btn_import.Size = new System.Drawing.Size(245, 90);
             this.btn_import.TabIndex = 3;
@@ -96,12 +99,47 @@
             this.btn_profile.UseVisualStyleBackColor = true;
             this.btn_profile.Click += new System.EventHandler(this.btn_profile_Click);
             // 
+            // lbl_ver
+            // 
+            this.lbl_ver.AutoSize = true;
+            this.lbl_ver.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_ver.Location = new System.Drawing.Point(455, 103);
+            this.lbl_ver.Name = "lbl_ver";
+            this.lbl_ver.Size = new System.Drawing.Size(120, 23);
+            this.lbl_ver.TabIndex = 5;
+            this.lbl_ver.Text = "Ver 1.0 - Static";
+            // 
+            // lbl_credit
+            // 
+            this.lbl_credit.AutoSize = true;
+            this.lbl_credit.Location = new System.Drawing.Point(12, 9);
+            this.lbl_credit.Name = "lbl_credit";
+            this.lbl_credit.Size = new System.Drawing.Size(122, 40);
+            this.lbl_credit.TabIndex = 6;
+            this.lbl_credit.Text = "Created by Or. K\r\nDP2 year of 2022\r\n";
+            // 
+            // btn_exportSet
+            // 
+            this.btn_exportSet.BackColor = System.Drawing.Color.Transparent;
+            this.btn_exportSet.Font = new System.Drawing.Font("Segoe UI Emoji", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_exportSet.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_exportSet.Location = new System.Drawing.Point(725, 537);
+            this.btn_exportSet.Name = "btn_exportSet";
+            this.btn_exportSet.Size = new System.Drawing.Size(245, 90);
+            this.btn_exportSet.TabIndex = 7;
+            this.btn_exportSet.Text = "Send Sets To Your Freinds!";
+            this.btn_exportSet.UseVisualStyleBackColor = false;
+            this.btn_exportSet.Click += new System.EventHandler(this.btn_exportSet_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.btn_exportSet);
+            this.Controls.Add(this.lbl_credit);
+            this.Controls.Add(this.lbl_ver);
             this.Controls.Add(this.btn_profile);
             this.Controls.Add(this.btn_import);
             this.Controls.Add(this.btn_load);
@@ -125,5 +163,8 @@
         private Button btn_load;
         private Button btn_import;
         private Button btn_profile;
+        private Label lbl_ver;
+        private Label lbl_credit;
+        private Button btn_exportSet;
     }
 }

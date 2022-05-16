@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 namespace Revisionary
 {
@@ -109,6 +110,10 @@ namespace Revisionary
 
                 button.Size = new Size(150, 100);
                 button.Text = answers[i];
+
+                //Change the font size of the button text to fit the button size
+                button.Font = new Font(button.Font.FontFamily, button.Size.Height / 6);
+
                 button.BackColor = Color.Beige;
                 button.ForeColor = Color.Black;
                 button.Click += new System.EventHandler(this.click_answer_handaler);
@@ -116,8 +121,7 @@ namespace Revisionary
                 this.Controls.Add(button);
 
 
-                //Sets the place where the buttons would spawn
-                if(btnCounter % 3 == 0 && btnCounter != 0)
+                if (btnCounter % 3 == 0 && btnCounter != 0)
                 {
                     top += 200;
 
@@ -138,10 +142,13 @@ namespace Revisionary
                 btnCounter++;
                 Buttons.Add(button);
             }
+            
 
 
             //Sets other data
             lbl_question.Text = currentCard.question;
+            lbl_question.Left = (this.Width - lbl_question.Width) / 2;
+
             lbl_questionNumber.Text = currentCardIndex + "/" + cardsSet.cards.Length;
         }
 
@@ -154,6 +161,10 @@ namespace Revisionary
             if(btn.Text == currentCard.rightAnswer)
             {
                 correctAnswers++;
+                string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+                SoundPlayer soundPlayer = new SoundPlayer(appdata + @"\.Revisionary\comps\correct.wav");
+                soundPlayer.Play();
             }
 
             //Loops over the btns and set their color according to which one was right and which one wasn't
@@ -172,6 +183,7 @@ namespace Revisionary
 
             //Displays if the answer was correct or wrong
             lbl_correctOrWrong.Visible = true;
+            
             if(btn.Text == currentCard.rightAnswer)
             {
                 lbl_correctOrWrong.ForeColor = Color.Green;
@@ -182,6 +194,9 @@ namespace Revisionary
                 lbl_correctOrWrong.ForeColor = Color.Red;
                 lbl_correctOrWrong.Text = "Wrong!";
             }
+
+            //Center label
+            lbl_correctOrWrong.Left = (this.Width - lbl_correctOrWrong.Width) / 2;
 
             WaitNSeconds(2);
             MoveToNextQuestion();
@@ -232,23 +247,26 @@ namespace Revisionary
 
             ProfileMannager.updateGamesPlayed();
 
-            lbl_stuts.Text = "You've answered " + correctAnswers + "/" + cardsSet.cards.Length + "questions correctly!";
+            lbl_stuts.Text = "You've answered " + correctAnswers + "/" + cardsSet.cards.Length + " questions correctly!";
 
             if(correctAnswers >= cardsSet.cards.Length)
             {
-                lbl_stuts.Text += "\nYou've got a perfect game... Nice!";
+                lbl_stuts.Text += " You've got a perect score!";
                 ProfileMannager.updatePerfectGames(1);
             }
 
             lbl_stuts.Text += "\nPlay time: " + timeInMinutes.ToString().Substring(0, 4) + " minutes";
+            //center the label
+            lbl_stuts.Left = (this.Width - lbl_stuts.Width) / 2;
 
             lbl_stuts.TextAlign = ContentAlignment.MiddleCenter;
             lbl_stuts.Visible = true;
             btn_backToMenu.Visible = true;
             btn_playAgain.Visible = true;
+            btn_seeProgress.Visible = true;
 
 
-            MannageStuts.AddRecord(cardsSet.title, cardsSet.subject, cardsSet.cards.Length, correctAnswers); //Adds the record to the db
+            MannageStuts.AddRecord(cardsSet.title, cardsSet.subject, cardsSet.cards.Length, correctAnswers, timeInMinutes); //Adds the record to the dbs
         }
 
 
@@ -276,6 +294,14 @@ namespace Revisionary
         private void Form_Closing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+
+        private void btn_seeProgres_Click(object sender, EventArgs e)
+        {
+            Progress progress = new Progress(cardsSet);
+            progress.Show();
+            Hide();
         }
     }
 }
