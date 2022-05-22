@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hp\\Desktop\\Programing Projects\\C#\\Revisionary\\Revisionary\\Revisionary.csproj": {}
+    "C:\\Programing Projects\\C#\\Revisionary\\Revisionary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hp\\Desktop\\Programing Projects\\C#\\Revisionary\\Revisionary\\Revisionary.csproj": {
+    "C:\\Programing Projects\\C#\\Revisionary\\Revisionary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\Desktop\\Programing Projects\\C#\\Revisionary\\Revisionary\\Revisionary.csproj",
+        "projectUniqueName": "C:\\Programing Projects\\C#\\Revisionary\\Revisionary.csproj",
         "projectName": "Revisionary",
-        "projectPath": "C:\\Users\\hp\\Desktop\\Programing Projects\\C#\\Revisionary\\Revisionary\\Revisionary.csproj",
+        "projectPath": "C:\\Programing Projects\\C#\\Revisionary\\Revisionary.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\Desktop\\Programing Projects\\C#\\Revisionary\\Revisionary\\obj\\",
+        "outputPath": "C:\\Programing Projects\\C#\\Revisionary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

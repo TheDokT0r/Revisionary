@@ -24,7 +24,7 @@ namespace Revisionary
         public Game(CardsSet set)
         {
             string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            soundEffectsPath = appdata + @"\.Revisionary\comps\";
+            soundEffectsPath = "./comps/";
             ticksCounter = 0;
             cardsSet = set;
             cardsSet.cards = RandomizeSet(cardsSet.cards);

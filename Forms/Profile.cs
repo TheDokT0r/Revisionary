@@ -44,7 +44,14 @@ namespace Revisionary
         {
             string[] splited = timePlayed.ToString().Split(".");
 
-            return splited[0] + "." + splited[1].Substring(0, 2);
+            try
+            {
+                return splited[0] + "." + splited[1].Substring(0, 2);
+            }
+            catch
+            {
+                return splited[0] + ".00";
+            }
         }
 
 
