@@ -20,6 +20,8 @@ namespace Revisionary
         int correctAnswers = 0;
         int ticksCounter;
         string soundEffectsPath;
+        bool soundOn;
+        bool answerPressed; //Checks if an option has been pressed in this round
 
         public Game(CardsSet set)
         {
@@ -29,6 +31,8 @@ namespace Revisionary
             cardsSet = set;
             cardsSet.cards = RandomizeSet(cardsSet.cards);
             currentCardIndex = 0;
+            soundOn = true;
+            answerPressed = false;
 
             //buttons = this.Controls.OfType<Button>().ToList();
             Buttons = new List<Button>();
@@ -42,6 +46,11 @@ namespace Revisionary
             lbl_title.Text = cardsSet.title + "\n" + cardsSet.subject;
 
             timer_playTime.Start();
+
+            //Removes the borders from the sound button
+            btn_sound.TabStop = false;
+            btn_sound.FlatStyle = FlatStyle.Flat;
+            btn_sound.FlatAppearance.BorderSize = 0;
 
             DisplayNextQuestion();
         }
@@ -158,6 +167,12 @@ namespace Revisionary
 
         private void click_answer_handaler(object sender, EventArgs e) //btn, when the user clicks on a day, it shall take him to the data on said day
         {
+            if(answerPressed) //A checker so the user wouldn't be able to presse multiple buttons in the same round and manipulate his score
+            {
+                return;
+            }
+
+            answerPressed = true;
             var btn = sender as Button; //Sets the sender back as a button
             var currentCard = cardsSet.cards[currentCardIndex];
 
@@ -165,8 +180,11 @@ namespace Revisionary
             {
                 correctAnswers++;
 
-                SoundPlayer soundPlayer = new SoundPlayer(soundEffectsPath + @"\correct.wav");
-                soundPlayer.Play();
+                if(soundOn) //Plays the sound only if sound is on
+                {
+                    SoundPlayer soundPlayer = new SoundPlayer(soundEffectsPath + @"\correct.wav");
+                    soundPlayer.Play();
+                }
             }
 
             //Loops over the btns and set their color according to which one was right and which one wasn't
@@ -268,11 +286,20 @@ namespace Revisionary
             btn_playAgain.Visible = true;
             btn_seeProgress.Visible = true;
 
+            if(correctAnswers > cardsSet.cards.Length) //Debug in case that there're more correct answers then overall questions
+            {
+                correctAnswers = cardsSet.cards.Length;
+            }
 
-            MannageStuts.AddRecord(cardsSet.title, cardsSet.subject, cardsSet.cards.Length, correctAnswers, timeInMinutes); //Adds the record to the dbs
+            MannageStuts.AddRecord(cardsSet.title, cardsSet.subject, cardsSet.cards.Length, correctAnswers, timeInMinutes); //Adds the record to the DB
 
-            SoundPlayer soundPlayer = new SoundPlayer(soundEffectsPath + "finish.wav");
-            soundPlayer.Play();
+            if (soundOn) //Plays the sound only if sound is on
+            {
+                SoundPlayer soundPlayer = new SoundPlayer(soundEffectsPath + "finish.wav");
+                soundPlayer.Play();
+            }
+
+            answerPressed = false; //Resets the checker for next round
         }
 
 
@@ -308,6 +335,20 @@ namespace Revisionary
             Progress progress = new Progress(cardsSet);
             progress.Show();
             Hide();
+        }
+
+        private void btn_sound_Click(object sender, EventArgs e)
+        {
+            if(soundOn)
+            {
+                soundOn = false;
+                btn_sound.BackgroundImage = Image.FromFile("./img/mute.png");
+
+                return;
+            }
+
+            soundOn = true;
+            btn_sound.BackgroundImage = Image.FromFile("./img/unmute.png");
         }
     }
 }

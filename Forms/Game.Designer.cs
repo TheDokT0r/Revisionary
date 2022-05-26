@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.lbl_title = new System.Windows.Forms.Label();
             this.lbl_questionNumber = new System.Windows.Forms.Label();
             this.lbl_question = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@
             this.lbl_stuts = new System.Windows.Forms.Label();
             this.timer_playTime = new System.Windows.Forms.Timer(this.components);
             this.btn_seeProgress = new System.Windows.Forms.Button();
+            this.btn_sound = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -45,7 +47,7 @@
             this.lbl_title.AutoSize = true;
             this.lbl_title.Location = new System.Drawing.Point(12, 9);
             this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Size = new System.Drawing.Size(300, 41);
+            this.lbl_title.Size = new System.Drawing.Size(242, 32);
             this.lbl_title.TabIndex = 0;
             this.lbl_title.Text = "set name and subject";
             // 
@@ -54,7 +56,7 @@
             this.lbl_questionNumber.AutoSize = true;
             this.lbl_questionNumber.Location = new System.Drawing.Point(1188, 9);
             this.lbl_questionNumber.Name = "lbl_questionNumber";
-            this.lbl_questionNumber.Size = new System.Drawing.Size(62, 41);
+            this.lbl_questionNumber.Size = new System.Drawing.Size(49, 32);
             this.lbl_questionNumber.TabIndex = 1;
             this.lbl_questionNumber.Text = "0/0";
             // 
@@ -65,7 +67,7 @@
             this.lbl_question.ForeColor = System.Drawing.Color.White;
             this.lbl_question.Location = new System.Drawing.Point(464, 106);
             this.lbl_question.Name = "lbl_question";
-            this.lbl_question.Size = new System.Drawing.Size(244, 59);
+            this.lbl_question.Size = new System.Drawing.Size(200, 47);
             this.lbl_question.TabIndex = 2;
             this.lbl_question.Text = "Placeholder";
             this.lbl_question.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -76,7 +78,7 @@
             this.lbl_correctOrWrong.Font = new System.Drawing.Font("Segoe UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_correctOrWrong.Location = new System.Drawing.Point(494, 575);
             this.lbl_correctOrWrong.Name = "lbl_correctOrWrong";
-            this.lbl_correctOrWrong.Size = new System.Drawing.Size(214, 89);
+            this.lbl_correctOrWrong.Size = new System.Drawing.Size(172, 72);
             this.lbl_correctOrWrong.TabIndex = 3;
             this.lbl_correctOrWrong.Text = "label1";
             this.lbl_correctOrWrong.Visible = false;
@@ -115,7 +117,7 @@
             this.lbl_stuts.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_stuts.Location = new System.Drawing.Point(322, 97);
             this.lbl_stuts.Name = "lbl_stuts";
-            this.lbl_stuts.Size = new System.Drawing.Size(553, 108);
+            this.lbl_stuts.Size = new System.Drawing.Size(447, 90);
             this.lbl_stuts.TabIndex = 6;
             this.lbl_stuts.Text = "You\'ve answered (  ) Correctly!\r\nPlay time: Idk";
             this.lbl_stuts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -140,12 +142,25 @@
             this.btn_seeProgress.Visible = false;
             this.btn_seeProgress.Click += new System.EventHandler(this.btn_seeProgres_Click);
             // 
+            // btn_sound
+            // 
+            this.btn_sound.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_sound.BackgroundImage")));
+            this.btn_sound.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_sound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sound.Location = new System.Drawing.Point(1143, 575);
+            this.btn_sound.Name = "btn_sound";
+            this.btn_sound.Size = new System.Drawing.Size(107, 90);
+            this.btn_sound.TabIndex = 8;
+            this.btn_sound.UseVisualStyleBackColor = true;
+            this.btn_sound.Click += new System.EventHandler(this.btn_sound_Click);
+            // 
             // Game
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.btn_sound);
             this.Controls.Add(this.btn_seeProgress);
             this.Controls.Add(this.lbl_stuts);
             this.Controls.Add(this.btn_backToMenu);
@@ -178,5 +193,6 @@
         private Label lbl_stuts;
         private System.Windows.Forms.Timer timer_playTime;
         private Button btn_seeProgress;
+        private Button btn_sound;
     }
 }

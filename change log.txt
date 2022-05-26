@@ -1,0 +1,6 @@
+==================================
+1.0.1:
+    - Added mute button for mid game
+    - Added average of correct answers per set to the progress screen
+    - Fixed in-game bug that let's the user manipulate his score by pressing an answer multiple times per round
+    

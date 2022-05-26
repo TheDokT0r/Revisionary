@@ -119,6 +119,7 @@ namespace Revisionary
             lbl_gamesPlayed.Text = "Games Played: " + setData.records.Count;
             lbl_perfectGames.Text = "Perfect Games: " + perfectGames;
             lbl_timePlayed.Text = "Time played: " + setTimePlayedStr(Convert.ToDouble(setData.time_played)) + " minutes";
+            lbl_avrgCorrect.Text = "Average Correct Answers: " + getAverageRightAnswers();
         }
 
         string setTimePlayedStr(double timePlayed)
@@ -133,6 +134,21 @@ namespace Revisionary
             {
                 return Convert.ToString(timePlayed);
             }
+        }
+
+
+        double getAverageRightAnswers() //Get the average of correct answers
+        {
+            dynamic games = setData.records;
+
+            int amountOfRightAnswers = 0;
+
+            foreach(var game in games)
+            {
+                amountOfRightAnswers += Convert.ToInt64(game);
+            }
+
+            return amountOfRightAnswers / games.Count;
         }
 
         private void Progress_Load(object sender, EventArgs e)

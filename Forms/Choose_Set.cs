@@ -101,9 +101,16 @@ namespace Revisionary
             }
             else if (purpose == 1)
             {
-                Progress progress = new Progress(setsList[index]);
-                progress.Show();
-                Hide();
+                if(setsList[index] != null)
+                {
+                    Progress progress = new Progress(setsList[index]);
+                    progress.Show();
+                    Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Set couldn't be found");
+                }
             }
 
         }
