@@ -68,3 +68,4 @@ C:\Programing Projects\C#\Revisionary\obj\Debug\net6.0-windows\refint\Revisionar
 C:\Programing Projects\C#\Revisionary\obj\Debug\net6.0-windows\Revisionary.pdb
 C:\Programing Projects\C#\Revisionary\obj\Debug\net6.0-windows\Revisionary.genruntimeconfig.cache
 C:\Programing Projects\C#\Revisionary\obj\Debug\net6.0-windows\ref\Revisionary.dll
+C:\Programing Projects\C#\Revisionary\obj\Debug\net6.0-windows\Revisionary.Create_Set_Old.resources

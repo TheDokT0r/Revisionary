@@ -31,6 +31,10 @@ namespace Revisionary
                 return;
             }
 
+            /*Create_Set_Old create_Set = new Create_Set_Old(txb_title.Text, cmb_subjects.Text);
+            create_Set.Show();
+            Hide();*/
+
             Create_Set create_Set = new Create_Set(txb_title.Text, cmb_subjects.Text);
             create_Set.Show();
             Hide();

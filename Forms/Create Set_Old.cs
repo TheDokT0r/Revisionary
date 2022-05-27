@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Revisionary
 {
-    public partial class Create_Set : Form
+    public partial class Create_Set_Old : Form
     {
         List<Card> cards;
         List<TextBox> wrongAnswersTxb;
@@ -18,7 +18,7 @@ namespace Revisionary
 
         string title, subject;
 
-        public Create_Set(string title, string subject)
+        public Create_Set_Old(string title, string subject)
         {
             InitializeComponent();
             cards = new List<Card>();

@@ -1,6 +1,10 @@
+1.1 - Shadow:
+    - New layout to the Add Sat form
+    - Bug fixes to the Add Set form
+
 ==================================
-1.0.1:
+1.0.1 - Static:
     - Added mute button for mid game
     - Added average of correct answers per set to the progress screen
     - Fixed in-game bug that let's the user manipulate his score by pressing an answer multiple times per round
-    
+==================================

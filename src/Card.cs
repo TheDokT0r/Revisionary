@@ -15,7 +15,7 @@ namespace Revisionary
         public Card(string question, string rightAnswer, string[] wrongAnswers)
         {
             this.question = question;
-            this.rightAnswer = rightAnswer;
+            this.rightAnswer =  rightAnswer;
             this.wrongAnswers = wrongAnswers;
         }
     }

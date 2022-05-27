@@ -18,5 +18,14 @@ namespace Revisionary
             this.subject = subject;
             this.cards = cards;
         }
+
+
+        public void AddCard(Card card)
+        {
+            var temp = new Card[cards.Length + 1];
+            cards.CopyTo(temp, 0);
+            temp[temp.Length - 1] = card;
+            cards = temp;
+        }
     }
 }
